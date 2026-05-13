@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqrkhvj1h54jp"]
+
+[ext_resource type="Script" uid="uid://hf443xe5am7x" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://vml6gb8n654r" path="res://Entrega 10/coin/pixil-frame-0.png" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cmt0x3qt8alra" path="res://Entrega 10/coin/coin.tscn" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://b4qyrn31ub6pt" path="res://Entrega 9/Player.tscn" id="4_272bh"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_1bvp3")
+
+[node name="background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_lquwl")
+stretch_mode = 1
+
+[node name="Coin" parent="." instance=ExtResource("3_7mycd")]
+
+[node name="Player" parent="." instance=ExtResource("4_272bh")]
+position = Vector2(106, 83)
+
+[node name="Timer" type="Timer" parent="." groups=["coins"]]
